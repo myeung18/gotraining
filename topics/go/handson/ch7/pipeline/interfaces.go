@@ -20,3 +20,17 @@ func (receiver ProcessFunc) Process(ctx context.Context, p Payload) (Payload, er
 	receiver(ctx, p)
 	return "", nil
 }
+
+
+
+
+
+
+
+type MyData struct {
+	name string
+}
+
+func (receiver MyData) Process(ctx context.Context, payload Payload) (Payload, error) {
+	return nil, nil
+}
