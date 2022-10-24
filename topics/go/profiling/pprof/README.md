@@ -96,6 +96,22 @@ Garbage collector statistics.
 
 Run the pprof tool.
 
+
+    $ go tool pprof -alloc_objects http://localhost:5000/debug/pprof/profile?seconds=5
+    $ go tool pprof -alloc_objects http://localhost:5000/debug/pprof/heap
+    $ go tool pprof -alloc_space http://localhost:5000/debug/pprof/allocs
+        $ top 40 -cum
+        $ list rssSearch
+        $ list executeTempalte 
+        $ list <program_keyword>
+        $ web list rssSearch
+
+        $ http://localhost:5000/debug/pprof/heap?debug=1
+            $ type: inuse_space
+            $ type: alloc_space
+            $ type: alloc_objects
+            $ type: cpu
+
 	$ go tool pprof -<PICK_MEM_PROFILE> ./pprof http://localhost:4000/debug/pprof/heap
 
 Documentation of memory profile options.

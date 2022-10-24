@@ -13,6 +13,7 @@ import (
 	"log"
 	"os"
 	"runtime"
+	"runtime/pprof"
 	"runtime/trace"
 	"strings"
 	"sync"
@@ -38,8 +39,8 @@ type (
 )
 
 func main() {
-	// pprof.StartCPUProfile(os.Stdout)
-	// defer pprof.StopCPUProfile()
+	pprof.StartCPUProfile(os.Stdout)
+	defer pprof.StopCPUProfile()
 
 	// trace.Start(os.Stdout)
 	// defer trace.Stop()

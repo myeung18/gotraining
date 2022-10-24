@@ -9,6 +9,9 @@ Using benchmarks you can profile your programs and see exactly where your perfor
 Run the benchmark.
    
     $ go test -run none -bench . -benchtime 3s -benchmem -cpuprofile p.out
+	$ go test -gcflags "-m -m" -run none -bench . -benchtime 3s -benchmem -memprofile p.out
+        $ go tool pprof -alloc_space p.out
+            (pprof) list algOne
 
 Run the pprof tool using the command line tooling.
     
@@ -49,6 +52,15 @@ Run these pprof commands.
 Run the pprof tool using the browser based tooling.
 
     $ go tool pprof -<OPTIONAL_PICK_MEM_PROFILE> -http :3000 p.out
+
+My notes:
+    $ go tool pprof --alloc_space m.out
+    $ go test -gcflags "-m -m" -run none -bench . -benchtime 3s -benchmem -memprofile m.out
+    $ go test -run none -bench . -benchtime 3s -cpuprofile c.out
+    $ go tool pprof c.out
+        type: cpu
+        >    list algOne
+    $ go tool pprof -http :3000 c.out
 
 Navigate the drop down menu in the UI.
 

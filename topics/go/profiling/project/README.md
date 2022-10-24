@@ -132,6 +132,9 @@ Run the benchmarks and produce a cpu and memory profile.
 	$ go tool pprof -inuse_space p.out
 	(pprof) web list rssSearch
 
+	$ go test -gcflags "-m -m" -run none -bench . -benchtime 3s -benchmem -memprofile p.out
+
+
 ### Trace Profiles
 
 #### Trace Web Application
